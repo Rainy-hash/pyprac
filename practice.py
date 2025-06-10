@@ -1,0 +1,32 @@
+"""
+This module contains functions for solving geometric shapes and a temperature converter tool.
+"""
+
+import math
+
+def circle_solver(radius):
+    area = math.pi * radius ** 2
+    circumference = math.pi * radius * 2
+    diameter = 2 * radius
+    print(f"Area: {area}\nCircumference {circumference}\nDiameter {diameter}")
+
+def square_solver (side):
+    area = side * side
+    perimeter = 4 * side
+    diag = side * math.sqrt(2)
+    diag = round(diag, 2)
+    print(f"Square Measurements,\nArea: {area}\nPerimeter: {perimeter}\nDiagonal: {diag}")
+
+def temp_convert(value, scale):
+    fahrenheit = 'F'
+    celsius = 'C'
+    if scale == fahrenheit:
+        celsius_value = (value - 32) * 5/9
+        rounded_c = round(celsius_value, 2)
+        print(f"{value} from Fahrenheit to Celsius is: {rounded_c}")
+    elif scale == celsius:
+        fahrenheit_value = (value * 9/5) + 32
+        rounded_f = round(fahrenheit_value, 2)
+        print(f"{value} from Celsius to Fahrenheit is: {rounded_f}")
+    else:
+        print("Please give a valid value and/or unit please")
