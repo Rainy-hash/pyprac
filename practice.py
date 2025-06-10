@@ -1,5 +1,6 @@
 """
 This module contains functions for solving geometric shapes and a temperature converter tool.
+Temperature conversion requires the scale to be uppercase ('F' or 'C').
 """
 
 import math
