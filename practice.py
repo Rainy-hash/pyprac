@@ -6,12 +6,18 @@ Temperature conversion requires the scale to be uppercase ('F' or 'C').
 import math
 
 def circle_solver(radius):
+    if radius <= 0:
+        print("Radius must remain above 0")
+        return
     area = math.pi * radius ** 2
     circumference = math.pi * radius * 2
     diameter = 2 * radius
     print(f"Area: {area}\nCircumference {circumference}\nDiameter {diameter}")
 
 def square_solver (side):
+    if side <= 0:
+        print("Side length must remain above 0")
+        return
     area = side * side
     perimeter = 4 * side
     diag = side * math.sqrt(2)
@@ -31,3 +37,5 @@ def temp_convert(value, scale):
         print(f"{value} from Celsius to Fahrenheit is: {rounded_f}")
     else:
         print("Please give a valid value and/or unit please")
+
+square_solver(0)
