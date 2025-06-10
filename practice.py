@@ -9,6 +9,7 @@ def circle_solver(radius):
     if radius <= 0:
         print("Radius must remain above 0")
         return
+    
     area = math.pi * radius ** 2
     circumference = math.pi * radius * 2
     diameter = 2 * radius
@@ -18,6 +19,7 @@ def square_solver (side):
     if side <= 0:
         print("Side length must remain above 0")
         return
+    
     area = side * side
     perimeter = 4 * side
     diag = side * math.sqrt(2)
@@ -27,6 +29,7 @@ def square_solver (side):
 def temp_convert(value, scale):
     fahrenheit = 'F'
     celsius = 'C'
+
     if scale == fahrenheit:
         celsius_value = (value - 32) * 5/9
         rounded_c = round(celsius_value, 2)
@@ -37,5 +40,3 @@ def temp_convert(value, scale):
         print(f"{value} from Celsius to Fahrenheit is: {rounded_f}")
     else:
         print("Please give a valid value and/or unit please")
-
-square_solver(0)
