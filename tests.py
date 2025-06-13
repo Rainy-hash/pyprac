@@ -1,9 +1,8 @@
 """
 This file acts as a test, providing numerous inputs for each funciton to prove they are accurate.
 """
-
 from units import *
-
+#For the cases I have hardcoded the correct answers.
 circle_cases = [
     (2, (12.57, 12.57, 4.0)),
     (43, (5808.80, 270.18, 86.0)),
@@ -16,45 +15,67 @@ square_cases = [
     (8, (64, 32, 11.31))
 ]
 
-def circle_test(input1, expected_output):
-    print(f"Inputs: {input1}")
-    print(f"Expecting: {expected_output}")
-    result = circle_solver(input1)
-    rounded_result = tuple(round(x, 2) for x in result)
-    print(f"Actual result {rounded_result}")
-    if rounded_result == expected_output:
+triangle_cases = [
+    (4, 3, (6.0, 5.0, 12.0)),
+    (10, 20, (100.0, 22.36, 52.36)),
+    (16, 4, (32.0, 16.49, 36.49))
+]
+
+def circle_test(radius, expected_output): 
+    print(f"Your input is...: {radius}\nExpecting: {expected_output}")
+    result =  (tuple(round(x, 2) for x in circle_solver(radius)))
+    print(f"Result for area, circumference, and diameter are {result}")
+    if result == expected_output:
+        print("---")
         print("SUCCESS")
         return True
     print("FAIL")
     return False
 
-def square_test(input1, expected_output):
-    print(f"Inputs: {input1}")
-    print(f"Expecting: {expected_output}")
-    result = square_solver(input1)
-    rounded_result = tuple(round(x, 2) for x in result)
-    print(f"Actual result {rounded_result}")
-    if rounded_result == expected_output:
+def square_test(side, expected_output):
+    print(f"Your input is...: {side}\nExpecting: {expected_output}")
+    result = tuple(round(x, 2) for x in square_solver(side))
+    print(f"Result for area, perimeter, and diagonal are {result}")
+    if result == expected_output:
+        print("---")
         print("SUCCESS")
         return True
     print("FAIL")
     return False
 
-#Below the function will run and display the tests using the functions above
+def triangle_test(base, height, expected_output):
+    print(f"Your inputs are...: {base, height}\nExpecting: {expected_output}")
+    result = tuple(round(x, 2) for x in triangle_solver(base, height))
+    print(f"Result for area, hypotenuse, and perimeter are {result}")
+    if result == expected_output:
+        print("---")
+        print("SUCCESS")
+        return True
+    print("FAIL")
+    return False
+
+#Below the for loops will run and display the tests using the functions above
 
 def main():
     passed = 0
     failed = 0
 
-    for case, expected_output in circle_cases:
-        correct = circle_test(case, expected_output)
+    for radius, expected_output in circle_cases:
+        correct = circle_test(radius, expected_output)
         if correct:
             passed += 1
         else:
             failed += 1
 
-    for case, expected_output in square_cases:
-        correct = square_test(case, expected_output)
+    for side, expected_output in square_cases:
+        correct = square_test(side, expected_output)
+        if correct:
+            passed += 1
+        else:
+            failed += 1
+    
+    for base, height, expected_output in triangle_cases:
+        correct = triangle_test(base, height, expected_output)
         if correct:
             passed += 1
         else:
