@@ -1,7 +1,7 @@
 """
 This file acts as a test, providing numerous inputs for each funciton to prove they are accurate.
 """
-from shape_equate.units import *
+from units import *
 #For the cases I have hardcoded the correct answers.
 circle_cases = [
     (2, (12.57, 12.57, 4.0)),
