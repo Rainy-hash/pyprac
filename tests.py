@@ -85,5 +85,6 @@ def main():
         print("ALL TESTS HAVE PASSED")
     else:
         print("FAIL, PLEASE CHECK AGAIN")
-
+    
+    print(f"{passed} passed, {failed} failed.")
 main()
